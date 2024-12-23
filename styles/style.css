@@ -1,0 +1,146 @@
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем заголовок */
+    padding-top: 10px; /* Увеличиваем отступы сверху и снизу для объема */
+    padding-bottom: 20px;
+    background-color: white;
+    border-bottom: none; /* Убираем разделитель */
+    position: relative; /* Для позиционирования кнопки */
+}
+
+/* Кнопка назад */
+.back-btn {
+    position: absolute; /* Для абсолютного позиционирования кнопки */
+    left: 0; /* Сдвигаем кнопку влево */
+    font-size: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Убираем padding, чтобы кнопка не была слишком большой */
+}
+
+/* Заголовок */
+.header h1 {
+    text-align: center; /* Центрируем текст */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    flex-grow: 1; /* Позволяет заголовку занимать всю доступную ширину */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Doc */
+.doc-h {
+    font-size: 20px;
+}
+.doc-btn {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 7px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: none;
+    font-weight: bold;
+    text-decoration: none;
+    justify-content: flex-start; /* выравнивание по левому краю */
+    align-items: center; /* вертикальное выравнивание */
+    width: 100%;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.id-btn .icon-id {
+    margin-right: -20px;
+}
+
+.vac-btn .docs-icon {
+    margin-right: -10px;
+}
+
+.stu-btn .docs-icon {
+    margin-right: -10px;
+}
+
+.docs-btn .docs-icon {
+    margin-right: -10px;
+}
+
+.icon-id {
+    position: relative;
+    right: 15px;
+}
+
+.docs-icon {
+    position: relative;
+    right: 10px; /* Убираем смещение, чтобы иконка не смещалась */
+    bottom: 0; /* Убираем смещение */
+}
+
+.doc-btn.id-btn, .doc-btn.vac-btn, .doc-btn.stu-btn, .doc-btn.docs-btn {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; /* Размещаем основной и дополнительный текст друг под другом */
+}
+
+.main-text {
+    font-size: 16px; /* Основной текст "Справки" */
+    font-weight: bold;
+    color: #000000; /* Чёрный цвет */
+    text-align: start;
+}
+
+.com {
+    font-size: 12px; /* Уменьшаем размер текста */
+    color: #808080; /* Серый цвет */
+    font-weight: normal; /* Убираем жирность */
+    margin-top: 3px; /* Отступ сверху, если нужно больше расстояния */
+}
+
+.doc-btn.docs-btn {
+    position: relative;
+    border-radius: 0 0 20px 20px;
+    outline: cursor;
+    width: 100%;
+    margin 0px 10px 0px 10px;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+.divder {
+    position: relative;
+    height: 50px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    margin: 20px 0;
+    width: calc(100% - -17px);
+    bottom: 40px;
+    right: 10px;
+    z-index: -1;
+}
+/* Обновить список документов */
+
+.update-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-weight: 400;
+    background-color: #ffffff;
+    color: #36a1ff;
+    border: 2px solid #82bcff;
+    transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,429 @@
+/* Общие настройки */
+body, html {
+    touch-action: manipulation; /* Запретит зум и скролл жестами */
+}
+
+#image-container {
+    touch-action: none; /* Включаем возможность зума и перемещения для контейнера */
+}
+
+* {
+    outline: none; /* Убирает стандартный контур для всех элементов */
+    -webkit-tap-highlight-color: transparent; /* Убирает синий эффект при касании на мобильных устройствах */
+}
+
+button:focus, a:focus, input:focus, textarea:focus, select:focus {
+    outline: none; /* Убираем контур с кнопок, ссылок и формы при фокусе */
+}
+
+
+.tab:focus, .tab:focus-visible {
+    outline: none; /* Убираем синий контур */
+}
+
+button, a, img, div, span {
+    outline: none;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем заголовок */
+    padding: 25px 15px; /* Увеличиваем отступы сверху и снизу для объема */
+    background-color: white;
+    border-bottom: none; /* Убираем разделитель */
+    position: relative; /* Для позиционирования кнопки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+}
+
+/* Кнопка назад */
+.back-btn {
+    position: absolute; /* Для абсолютного позиционирования кнопки */
+    left: 0; /* Сдвигаем кнопку влево */
+    font-size: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Убираем padding, чтобы кнопка не была слишком большой */
+}
+
+/* Заголовок */
+.header h1 {
+    text-align: center; /* Центрируем текст */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    flex-grow: 1; /* Позволяет заголовку занимать всю доступную ширину */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    -webkit-tap-highlight-color: transparent;
+    padding: 1px 0;
+    outline: none;
+    border-bottom: 0px solid #e0e0e0;
+}
+
+.tab-slider {
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    outline: none;
+    position: relative;
+    height: 35px;
+    width: 96%;
+    background: #e6e6e6;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e6e6e6;
+}
+
+.tab {
+    -webkit-tap-highlight-color: transparent;
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    padding: 9px 0;
+    font-weight: bold;
+    z-index: 2;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: black;
+}
+
+.tab.active {
+    -webkit-tap-highlight-color: transparent;
+    color: black;
+    outline: none;
+}
+
+.slider {
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    top: 0;
+    outline: none;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    transition: none;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.copy-btn {
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+/* Sections */
+.sections-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: 100%;
+    outline: none;
+}
+
+.section {
+    flex-shrink: 0;
+    width: 100%;
+    outline: none;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    outline: none;
+    overflow-y: auto;
+}
+
+.document-section .document-photo {
+    display: flex;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    text-align: center;
+    height: 200px;
+    overflow: hidden;
+}
+.id-card {
+    width: 100%;
+    height: 85%;
+    outline: none;
+}
+
+.details-section {
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+.detail-item {
+    outline: none;
+            margin-bottom: 15px;
+        }
+        .det-info {
+            outline: none;
+            font-weight: 450;
+            margin-bottom: 5px;
+            color: #999;
+        }
+        input[type="text"] {
+            width: 100%;
+            outline: none;
+            padding: 8px;
+            margin-top: 5px;
+            font-weight: 500;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[type="text"].readonly {
+            border: none;
+            background: none;
+            padding: 0;
+            font-size: 16px;
+            color: black;
+            pointer-events: none; /* Полностью отключает возможность взаимодействия */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 19px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-btn.present-btn {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+.footer-btn.send-btn {
+    background-color: #ffffff;
+    color: #0073e6;
+    border: 2px solid #0073e6;
+}
+
+.footer-btn:hover {
+    opacity: 0.9;outline: none;
+}
+/* Модальное окно */
+/* Основной стиль для модального окна */
+.modal {
+    position: fixed; /* Закрепляем окно на экране */
+    bottom: 0; /* Окно будет прикреплено к нижнему краю экрана */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%) translateY(100%); /* Начальное положение снизу */
+    width: 90%; /* Уменьшаем ширину до 90% экрана */
+    max-width: 360px; /* Максимальная ширина */
+    height: 320px; /* Фиксированная высота */
+    background: white; /* Цвет фона */
+    border-radius: 10px; /* Скругляем углы */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+    z-index: 1000; /* Поверх всех элементов */
+    visibility: hidden; /* Окно скрыто по умолчанию */
+    opacity: 0; /* Окно скрыто по умолчанию */
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s 0.4s; /* Плавное появление */
+}
+
+/* Видимое состояние модального окна */
+.modal.visible {
+    transform: translateX(-50%) translateY(0); /* Окно поднимается наверх */
+    opacity: 1; /* Окно становится видимым */
+    visibility: visible; /* Окно становится видимым */
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s; /* Плавность перехода */
+}
+
+/* Заголовок модального окна */
+.modal-header {
+    display: flex;
+    justify-content: space-between; /* Разделяем заголовок и кнопку */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 18px; /* Размер текста */
+    font-weight: bold;
+    margin: 0; /* Убираем отступы */
+}
+
+/* Кнопка закрытия модального окна */
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Контент модального окна */
+.modal-content {
+    text-align: center;
+    padding: 10px 0; /* Отступы для внутреннего контента */
+}
+
+.qr-code {
+    width: 150px; /* Размер QR-кода */
+    height: 150px;
+    margin: 5px auto; /* Центрируем по горизонтали, уменьшаем отступы */
+    object-fit: contain;
+    display: block;
+}
+
+/* Обертка для текста "Или скажите код" и самого кода */
+.random-code-wrapper {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 30px; /* Расположение у нижнего края окна */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    text-align: center;
+}
+
+/* Текст "Или скажите код" */
+.random-code-wrapper .inst {
+    font-size: 14px; /* Размер шрифта */
+    color: black;
+    margin-bottom: 5px; /* Уменьшаем отступ между текстом и кодом */
+}
+
+/* Шестизначный код */
+.random-code-wrapper .random-code {
+    font-size: 25px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: black; /* Цвет текста */
+    margin-top: 5px;
+}
+/* Страница фиксирована, чтобы не растягивалась */
+
+/* Фиксируем контейнер с изображением на экране */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Фиксируем на экране */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    z-index: 9999;
+    overflow: hidden; /* Чтобы не выходило за пределы */
+}
+
+/* Стили для изображения */
+#uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+    transform-origin: center center; /* Центрируем зум */
+    user-select: none; /* Предотвращаем выделение изображения */
+}
+/* Блок с фиксированнойнавигацией (шапка и нижние кнопки) */
+header, footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    z-index: 10000;
+}
+
+header {
+    top: 0;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    bottom: 0;
+    padding: 10px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Основное содержимое страницы */
+main {
+    position: relative;
+    padding: 20px;
+    margin-top: 80px; /* Отступ, чтобы не перекрывалась шапкой */
+    margin-bottom: 60px; /* Отступ для нижнего блока */
+    z-index: 5000;
+}
