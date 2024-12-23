@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Удостоверение личности</title>
+    <link rel="stylesheet" href="styles/idcard.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="index.html" class="back-btn">
+                <img src="img/back.png" width="35px" height="35px">
+            </a>
+            <h1>Удостоверение личности</h1>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab-slider">
+                <div class="tab">Документ</div>
+                <div class="tab">Реквизиты</div>
+                <div class="slider"></div>
+            </div>
+        </div>
+
+        <!-- Swipeable Sections with Footers -->
+        <div class="sections-wrapper">
+            <!-- Section: Документ -->
+            <div class="section document-section">
+                <div class="content document-content">
+    <!-- Контейнер для изображения -->
+    <div id="image-container" class="hidden">
+        <img id="uploaded-image" src="" alt="Загруженное изображение">
+    </div>
+    <!-- Кнопка для загрузки -->
+    <button id="upload-button">Загрузить изображение</button>
+</div>
+                <div class="footer">
+                    <button class="footer-btn present-btn">
+                        <span class="icon"></span>
+                        <img src="img/qr.png" width="25px" height="25px">
+                        Предъявить документ
+                    </button>
+                    <button class="footer-btn send-btn">
+                        <span class="icon"></span>
+                        <img src="img/upload.png" width="25px" height="25px">
+                        Отправить документ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Section: Реквизиты -->
+            <div class="section details-section">
+    <div class="content">
+        <div class="detail-item">
+            <div class="det-info">ФИО <img class="copy-btn fio-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"> </div>
+            <input type="text" id="fio" placeholder="Введите ФИО">
+        </div>
+        <div class="detail-item">
+            <div class="det-info">ИИН <img class="copy-btn iin-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"></div>
+            <input type="text" id="iin" placeholder="Введите ИИН">
+        </div>
+        <div class="detail-item">
+            <div class="det-info">Дата рождения <img class="copy-btn dd-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"></div>
+            <input type="text" id="birthdate" placeholder="Введите дату рождения">
+        </div>
+        <div class="detail-item">
+            <div class="det-info">Номер документа <img class="copy-btn nom-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"></div>
+            <input type="text" id="docNumber" placeholder="Введите номер документа">
+        </div>
+        <div class="detail-item">
+            <div class="det-info">Дата выдачи <img class="copy-btn db-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"></div>
+            <input type="text" id="issueDate" placeholder="Введите дату выдачи">
+        </div>
+        <div class="detail-item">
+            <div class="det-info">Срок действия <img class="copy-btn sb-btn" src="img/copy.png" width="25px" height="25px" float="right" alt="copy"></div>
+            <input type="text" id="expiryDate" placeholder="Введите срок действия">
+        </div>
+        <button id="saveButton">Сохранить</button>
+    </div>
+               <div class="footer">
+        <button class="footer-btn send-btn">
+            <span class="icon"></span>
+            <img src="img/upload.png" width="25px" height="25px">
+            Отправить документ
+        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal -->
+<div class="modal hidden">
+    <div class="modal-header">
+        <h2>Удостоверение личности</h2>
+        <button class="close-modal-btn"><img src="img/Transparent_X.png" width="10px" height="10px"></button>
+    </div>
+    <div class="modal-content">
+        <p>Покажите QR сотруднику</p>
+        <img class="qr-code" src="img/qr-code.png" alt="QR Code">
+        <div class="random-code-wrapper">
+            <span class="inst">Или скажите код</span>
+            <span class="random-code">123456</span>
+        </div>
+    </div>
+</div>
+    <script src="scripts/idcard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
