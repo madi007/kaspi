@@ -134,6 +134,7 @@ html {
 /* Обновить список документов */
 
 .update-btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
