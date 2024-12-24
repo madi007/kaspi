@@ -65,8 +65,6 @@ body, html {
     background-color: white;
     border-bottom: none; /* Убираем разделитель */
     position: relative; /* Для позиционирования кнопки */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
-}
 
 /* Кнопка назад */
 .back-btn {
