@@ -1,3 +1,7 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* Общие настройки */
 body, html {
     touch-action: manipulation; /* Запретит зум и скролл жестами */
