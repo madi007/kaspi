@@ -15,7 +15,7 @@ html {
 /* Кнопка назад */
 .back-btn {
     position: absolute; /* Для абсолютного позиционирования кнопки */
-    left: 5; /* Сдвигаем кнопку влево */
+    left: 5px; /* Сдвигаем кнопку влево */
     font-size: 25px;
     background: none;
     border: none;
