@@ -16,7 +16,7 @@ html {
 .back-btn {
     position: absolute; /* Для абсолютного позиционирования кнопки */
     left: 0; /* Сдвигаем кнопку влево */
-    right: 200px;
+    right: 300px;
     font-size: 25px;
     background: none;
     border: none;
