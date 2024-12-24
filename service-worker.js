@@ -1,14 +1,14 @@
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
     '/',
-    'index.html',
-    'idcard.html',
-    'styles/style.css',
-    'styles/adcard.css', 
-    'scripts/script.js', 
-    'scripts/idcard.js', 
-    'app.js',
-    'manifest.json'
+    'kaspi/index.html',
+    'kaspi/idcard.html',
+    'kaspi/styles/style.css',
+    'kaspi/styles/adcard.css', 
+    'kaspi/scripts/script.js', 
+    'kaspi/scripts/idcard.js', 
+    'kaspi/app.js',
+    'kaspi/manifest.json'
 ];
 
 self.addEventListener('install', event => {
