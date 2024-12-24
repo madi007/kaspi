@@ -61,7 +61,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center; /* Центрируем заголовок */
-    padding: 15px 5px; /* Увеличиваем отступы сверху и снизу для объема */
+    padding: 25px 15px; /* Увеличиваем отступы сверху и снизу для объема */
     background-color: white;
     border-bottom: none; /* Убираем разделитель */
     position: relative; /* Для позиционирования кнопки */
