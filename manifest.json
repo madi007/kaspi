@@ -2,8 +2,8 @@
   "name": "Kaspi.kzz",
   "short_name": "Kaspi.kzz",
   "start_url": "kaspi/index.html",
-  "id": "Kaspi-app"
-  "scope": "/",
+  "id": "Kaspi-app",
+  "scope": "/kaspi/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
