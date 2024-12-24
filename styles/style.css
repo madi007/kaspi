@@ -1,17 +1,16 @@
 html {
   font-family: 'Roboto', sans-serif;
 }
-
 /* Header */
 .header {
     display: flex;
     align-items: center;
     justify-content: center; /* Центрируем заголовок */
-    padding-top: 10px; /* Увеличиваем отступы сверху и снизу для объема */
-    padding-bottom: 20px;
+    padding: 25px 15px; /* Увеличиваем отступы сверху и снизу для объема */
     background-color: white;
     border-bottom: none; /* Убираем разделитель */
     position: relative; /* Для позиционирования кнопки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
 }
 
 /* Кнопка назад */
@@ -34,6 +33,7 @@ html {
     flex-grow: 1; /* Позволяет заголовку занимать всю доступную ширину */
     margin: 0; /* Убираем отступы */
 }
+
 
 /* Doc */
 .doc-h {
