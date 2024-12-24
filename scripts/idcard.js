@@ -121,13 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker зарегистрирован'))
-    .catch((err) => console.log('Ошибка регистрации Service Worker:', err));
-}
-
-
 // Проверка сохранённых данных
         document.addEventListener('DOMContentLoaded', () => {
             const fields = ['fio', 'iin', 'birthdate', 'docNumber', 'issueDate', 'expiryDate'];
