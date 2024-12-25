@@ -5,31 +5,53 @@ if ('serviceWorker' in navigator) {
 }
 
 // Обновить спискок документов
-function resetData() {
-    localStorage.clear();
-    alert("Все данные успешно сброшены!");
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // ====== Общие функции ======
 
-// Функция для проверки данных и сброса интерфейса
-function checkAndResetFields(fields, uploadedImageId, imageContainerId) {
-    const uploadedImage = document.getElementById(uploadedImageId);
-    const imageContainer = document.getElementById(imageContainerId);
+    // Сброс всех данных из localStorage
+    function resetData() {
+        localStorage.clear();
+        alert("Все данные успешно сброшены!");
+    }
 
-    // Проверяем, есть ли данные
-    if (!localStorage.getItem(fields[0])) {
-        // Сбрасываем поля
-        fields.forEach(field => {
-            const input = document.getElementById(field);
-            if (input) {
-                input.value = ''; // Очищаем значение
-                input.classList.remove('readonly'); // Убираем стили "только для чтения"
+    // Проверка и сброс данных на странице
+    function checkAndResetFields(fields, uploadedImageId, imageContainerId) {
+        const uploadedImage = document.getElementById(uploadedImageId);
+        const imageContainer = document.getElementById(imageContainerId);
+
+        if (!localStorage.getItem(fields[0])) {
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                if (input) {
+                    input.value = ''; // Очищаем значение
+                    input.classList.remove('readonly'); // Убираем стили "только для чтения"
+                }
+            });
+
+            if (uploadedImage && imageContainer) {
+                uploadedImage.src = '';
+                imageContainer.style.display = 'none';
             }
-        });
-
-        // Сбрасываем изображение
-        if (uploadedImage && imageContainer) {
-            uploadedImage.src = '';
-            imageContainer.style.display = 'none'; // Скрываем контейнер
         }
     }
-}
+
+    // ====== Логика для index.html ======
+    const updateButton = document.getElementById("update-btn");
+    if (updateButton) {
+        updateButton.addEventListener("click", function () {
+            resetData();
+
+            // (Опционально) Перенаправляем на другую страницу
+            window.location.href = "idcard.html";
+        });
+    }
+
+    // ====== Логика для idCard.html ======
+    const fields = ['fio', 'iin', 'birthdate', 'docNumber', 'issueDate', 'expiryDate'];
+    const uploadedImageId = "uploaded-image";
+    const imageContainerId = "image-container";
+
+    if (document.getElementById(uploadedImageId)) {
+        checkAndResetFields(fields, uploadedImageId, imageContainerId);
+    }
+});
