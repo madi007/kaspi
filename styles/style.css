@@ -121,12 +121,12 @@ html {
 
 .divder {
     position: relative;
-    height: 50px;
+    height: 10px;
     background-color: #f2f2f2;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 5px 0;
     width: calc(100% - -17px);
-    bottom: 40px;
+    bottom: 5px;
     right: 10px;
     z-index: -1;
 }
