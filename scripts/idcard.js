@@ -345,8 +345,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fields.forEach(field => localStorage.removeItem(field));
         localStorage.removeItem("uploadedImage");
         localStorage.setItem("isSaved", "false");
-
-        alert("Данные сброшены.");
     }
     if (localStorage.getItem("resetIdCard") === "true") {
         resetIdCard();
