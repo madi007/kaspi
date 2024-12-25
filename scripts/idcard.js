@@ -324,46 +324,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Обновить список документов
+document.addEventListener("DOMContentLoaded", () => {
+    const fields = ['fio', 'iin', 'birthdate', 'docNumber', 'issueDate', 'expiryDate'];
+    const uploadedImage = document.getElementById("uploaded-image");
+    const imageContainer = document.getElementById("image-container");
+    const uploadButton = document.getElementById("upload-button");
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const copyButtons = document.querySelectorAll('.copy-btn');
-
-    copyButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            let valueToCopy;
-
-            // Определяем, какое значение нужно скопировать на основе класса кнопки
-            if (button.classList.contains('fio-btn')) {
-                valueToCopy = localStorage.getItem('fio');
-            } else if (button.classList.contains('iin-btn')) {
-                valueToCopy = localStorage.getItem('iin');
-            } else if (button.classList.contains('dd-btn')) {
-                valueToCopy = localStorage.getItem('birthdate');
-            } else if (button.classList.contains('nom-btn')) {
-                valueToCopy = localStorage.getItem('docNumber');
-            } else if (button.classList.contains('db-btn')) {
-                valueToCopy = localStorage.getItem('issueDate');
-            } else if (button.classList.contains('sb-btn')) {
-                valueToCopy = localStorage.getItem('expiryDate');
-            }
-
-            // Если значение найдено, копируем его в буфер обмена
-            if (valueToCopy) {
-                const tempInput = document.createElement('textarea');
-                tempInput.value = valueToCopy;
-                tempInput.style.position = 'absolute';
-                tempInput.style.opacity = 0;
-                tempInput.style.left = '-9999px'; // Убираем элемент с экрана
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy'); // Копирование без Clipboard API
-                document.body.removeChild(tempInput);
-                alert('Скопировано: ' + valueToCopy);
-            } else {
-                alert('Нет данных для копирования');
+    function resetIdCard() {
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.value = "";
+                input.classList.remove("readonly");
             }
         });
+        uploadedImage.src = "";
+        imageContainer.style.display = "none";
+        uploadButton.style.display = "block";
+        fields.forEach(field => localStorage.removeItem(field));
+        localStorage.removeItem("uploadedImage");
+        localStorage.setItem("isSaved", "false");
+
+        alert("Данные сброшены.");
+    }
+    if (localStorage.getItem("resetIdCard") === "true") {
+        resetIdCard();
+        localStorage.removeItem("resetIdCard");
+    }
+    window.addEventListener("storage", (event) => {
+        if (event.key === "resetIdCard" && event.newValue === "true") {
+            resetIdCard();
+            localStorage.removeItem("resetIdCard");
+        }
     });
 });
