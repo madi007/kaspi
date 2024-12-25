@@ -250,45 +250,7 @@ body, html {
             cursor: not-allowed;
         }
     
-/* Footer */
-.footer {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
-}
 
-.footer-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 19px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.footer-btn.present-btn {
-    background-color: #0073e6;
-    color: #ffffff;
-}
-
-.footer-btn.send-btn {
-    background-color: #ffffff;
-    color: #0073e6;
-    border: 2px solid #0073e6;
-}
-
-.footer-btn:hover {
-    opacity: 0.9;outline: none;
-}
 /* Модальное окно */
 /* Основной стиль для модального окна */
 .modal {
@@ -417,12 +379,6 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    bottom: 0;
-    padding: 10px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
 /* Основное содержимое страницы */
 main {
     position: relative;
@@ -430,4 +386,57 @@ main {
     margin-top: 80px; /* Отступ, чтобы не перекрывалась шапкой */
     margin-bottom: 60px; /* Отступ для нижнего блока */
     z-index: 5000;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-content {
+    flex-grow: 1; /* Основной контент займет оставшуюся высоту */
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 19px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-btn.present-btn {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+.footer-btn.send-btn {
+    background-color: #ffffff;
+    color: #0073e6;
+    border: 2px solid #0073e6;
+}
+
+.footer-btn:hover {
+    opacity: 0.9;
+    outline: none;
 }
