@@ -357,3 +357,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-btn');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let valueToCopy;
+
+            // Определяем, какое значение нужно скопировать на основе класса кнопки
+            if (button.classList.contains('fio-btn')) {
+                valueToCopy = localStorage.getItem('fio');
+            } else if (button.classList.contains('iin-btn')) {
+                valueToCopy = localStorage.getItem('iin');
+            } else if (button.classList.contains('dd-btn')) {
+                valueToCopy = localStorage.getItem('birthdate');
+            } else if (button.classList.contains('nom-btn')) {
+                valueToCopy = localStorage.getItem('docNumber');
+            } else if (button.classList.contains('db-btn')) {
+                valueToCopy = localStorage.getItem('issueDate');
+            } else if (button.classList.contains('sb-btn')) {
+                valueToCopy = localStorage.getItem('expiryDate');
+            }
+
+            // Если значение найдено, копируем его в буфер обмена
+            if (valueToCopy) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = valueToCopy;
+                tempInput.style.position = 'absolute';
+                tempInput.style.opacity = 0;
+                tempInput.style.left = '-9999px'; // Убираем элемент с экрана
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy'); // Копирование без Clipboard API
+                document.body.removeChild(tempInput);
+            } else {
+                alert('Нет данных для копирования');
+            }
+        });
+    });
+});
