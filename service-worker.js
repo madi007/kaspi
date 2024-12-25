@@ -1,6 +1,6 @@
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
-    'kaspi/',
+    '/',
     'kaspi/index.html',
     'kaspi/idcard.html',
     'kaspi/styles/style.css',
