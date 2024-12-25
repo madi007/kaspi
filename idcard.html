@@ -110,26 +110,14 @@
     <script src="scripts/idcard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="app.js"></script>
-<!-- idCard.html -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const fields = ['fio', 'iin', 'birthdate', 'docNumber', 'issueDate', 'expiryDate'];
-        const uploadedImage = document.getElementById("uploaded-image");
-        const imageContainer = document.getElementById("image-container");
+        const uploadedImageId = "uploaded-image";
+        const imageContainerId = "image-container";
 
-        // Проверяем, если данные отсутствуют в localStorage
-        if (!localStorage.getItem('fio')) {
-            // Сбрасываем поля
-            fields.forEach(field => {
-                const input = document.getElementById(field);
-                input.value = ''; // Очищаем поле
-                input.classList.remove('readonly'); // Убираем "только для чтения"
-            });
-
-            // Сбрасываем изображение
-            uploadedImage.src = '';
-            imageContainer.style.display = 'none'; // Скрываем контейнер
-        }
+        // Проверяем и сбрасываем, если данных нет
+        checkAndResetFields(fields, uploadedImageId, imageContainerId);
     });
 </script>
 </body>
