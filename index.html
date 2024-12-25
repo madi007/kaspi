@@ -52,20 +52,18 @@
     </div>
     <script src="scripts/script.js"></script>
     <script src="app.js"></script>
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-        const resetButton = document.getElementById("update-btn");
+        const resetButton = document.getElementById("upload-btn");
 
         resetButton.addEventListener("click", function () {
-            // Очищаем данные
-            localStorage.clear();
+            // Вызываем функцию сброса
+            resetData();
 
-            alert("Все данные успешно сброшены!");
-
-            // (Опционально) Перенаправление на другую страницу
-            window.location.href = "idCard.html"; // Укажите путь к нужной странице
+            // (Опционально) Перенаправляем на другую страницу
+            window.location.href = "idcard.html"; // Укажите нужный путь
         });
     });
-    </script>
+</script>
 </body>
 </html>
