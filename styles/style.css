@@ -140,6 +140,7 @@ html {
     padding: 10px;
     font-size: 16px;
     border: none;
+    cursor: default;
     border-radius: 10px;
     width: 100%;
     font-weight: 400;
