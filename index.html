@@ -52,5 +52,20 @@
     </div>
     <script src="scripts/script.js"></script>
     <script src="app.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const resetButton = document.getElementById("update-btn");
+
+        resetButton.addEventListener("click", function () {
+            // Очищаем данные
+            localStorage.clear();
+
+            alert("Все данные успешно сброшены!");
+
+            // (Опционально) Перенаправление на другую страницу
+            window.location.href = "idCard.html"; // Укажите путь к нужной странице
+        });
+    });
+    </script>
 </body>
 </html>
