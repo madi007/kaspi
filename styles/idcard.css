@@ -400,12 +400,13 @@ header {
 }
 
 .footer-btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     padding: 19px;
-    top: 20px;
+    bottom: 20px;
     font-size: 16px;
     border: none;
     border-radius: 10px;
