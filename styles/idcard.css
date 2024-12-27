@@ -359,7 +359,7 @@ header {
 
 .footer {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
