@@ -358,7 +358,7 @@ header {
 }
 
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     display: flex;
     flex-direction: column;
