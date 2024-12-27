@@ -7,7 +7,7 @@ body, html {
     touch-action: manipulation; /* Запретит зум и скролл жестами */
 }
 
-#image-container {
+#image-container-med {
     touch-action: none; /* Включаем возможность зума и перемещения для контейнера */
 }
 
@@ -18,11 +18,6 @@ body, html {
 
 button:focus, a:focus, input:focus, textarea:focus, select:focus {
     outline: none; /* Убираем контур с кнопок, ссылок и формы при фокусе */
-}
-
-
-.tab:focus, .tab:focus-visible {
-    outline: none; /* Убираем синий контур */
 }
 
 button, a, img, div, span {
@@ -229,7 +224,7 @@ body, html {
 /* Страница фиксирована, чтобы не растягивалась */
 
 /* Фиксируем контейнер с изображением на экране */
-.image-container {
+.image-container-med {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -244,7 +239,7 @@ body, html {
 }
 
 /* Стили для изображения */
-#uploaded-image {
+#uploaded-image-med {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -254,7 +249,7 @@ body, html {
     user-select: none; /* Предотвращаем выделение изображения */
 }
 
-#upload-button {
+#upload-button-med {
   border: 2px solid #0073e6;
   border-radius: 10px;
   background-color: #0073e6;
