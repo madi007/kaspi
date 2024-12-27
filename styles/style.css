@@ -110,12 +110,7 @@ html {
 
 .doc-btn.docs-btn {
     position: relative;
-    border-radius: 0 0 20px 20px;
-    outline: cursor;
     width: 100%;
-    margin: 0px 10px 0px 10px;
-    border: none;
-    box-sizing: border-box;
 }
 
 
