@@ -33,9 +33,9 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const uploadButton = document.getElementById("upload-button");
-    const imageContainer = document.getElementById("image-container");
-    const uploadedImage = document.getElementById("uploaded-image");
+    const uploadButton = document.getElementById("upload-button-med");
+    const imageContainer = document.getElementById("image-container-med");
+    const uploadedImage = document.getElementById("uploaded-image-med");
 
     // Обработчик для кнопки загрузки
     uploadButton.addEventListener("click", function () {
@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // зум
 document.addEventListener("DOMContentLoaded", function () {
-    const imageContainer = document.getElementById("image-container");
-    const uploadedImage = document.getElementById("uploaded-image");
+    const imageContainer = document.getElementById("image-container-med");
+    const uploadedImage = document.getElementById("uploaded-image-med");
 
     let scale = 1; // Текущий масштаб
     let position = { x: 0, y: 0 }; // Текущая позиция
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Генерация файла
 document.addEventListener("DOMContentLoaded", function () {
-    const sendButtons = document.querySelectorAll(".footer-btn.send-btn"); // Выбираем все кнопки с классом
+    const sendButtons = document.querySelectorAll(".footer-btn.send-btn-med"); // Выбираем все кнопки с классом
 
     // Функция для создания имени файла
     function generateFileName() {
@@ -234,39 +234,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Не удалось загрузить изображение. Проверьте его источник.");
             };
         });
-    });
-});
-
-// Обновить список документов
-document.addEventListener("DOMContentLoaded", () => {
-    const fields = ['fio', 'iin', 'birthdate', 'docNumber', 'issueDate', 'expiryDate'];
-    const uploadedImage = document.getElementById("uploaded-image");
-    const imageContainer = document.getElementById("image-container");
-    const uploadButton = document.getElementById("upload-button");
-
-    function resetIdCard() {
-        fields.forEach(field => {
-            const input = document.getElementById(field);
-            if (input) {
-                input.value = "";
-                input.classList.remove("readonly");
-            }
-        });
-        uploadedImage.src = "";
-        imageContainer.style.display = "none";
-        uploadButton.style.display = "block";
-        fields.forEach(field => localStorage.removeItem(field));
-        localStorage.removeItem("uploadedImage");
-        localStorage.setItem("isSaved", "false");
-    }
-    if (localStorage.getItem("resetIdCard") === "true") {
-        resetIdCard();
-        localStorage.removeItem("resetIdCard");
-    }
-    window.addEventListener("storage", (event) => {
-        if (event.key === "resetIdCard" && event.newValue === "true") {
-            resetIdCard();
-            localStorage.removeItem("resetIdCard");
-        }
     });
 });
