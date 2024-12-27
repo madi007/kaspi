@@ -47,7 +47,7 @@ html {
     font-size: 16px;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: none;
     font-weight: bold;
     text-decoration: none;
     justify-content: flex-start; /* выравнивание по левому краю */
