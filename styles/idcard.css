@@ -1,36 +1,5 @@
-html {
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Общие настройки */
 body, html {
-    touch-action: manipulation; /* Запретит зум и скролл жестами */
-}
-
-#image-container {
-    touch-action: none; /* Включаем возможность зума и перемещения для контейнера */
-}
-
-* {
-    outline: none; /* Убирает стандартный контур для всех элементов */
-    -webkit-tap-highlight-color: transparent; /* Убирает синий эффект при касании на мобильных устройствах */
-}
-
-button:focus, a:focus, input:focus, textarea:focus, select:focus {
-    outline: none; /* Убираем контур с кнопок, ссылок и формы при фокусе */
-}
-
-
-.tab:focus, .tab:focus-visible {
-    outline: none; /* Убираем синий контур */
-}
-
-button, a, img, div, span {
-    outline: none;
-}
-
-body, html {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +11,24 @@ body, html {
     padding: 0;
     touch-action: manipulation;
 
+} 
+
+#image-container {
+    touch-action: none;
+}
+
+* {
+    outline: none;
+    -webkit-tap-highlight-color: transparen;
+}
+
+button:focus, a:focus, input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+
+.tab:focus, .tab:focus-visible {
+    outline: none;
 }
 
 .container {
@@ -55,40 +42,32 @@ body, html {
     padding: 0;
     outline: none;
 }
-
-/* Header */
 .header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Центрируем заголовок */
-    padding: 25px 15px; /* Увеличиваем отступы сверху и снизу для объема */
+    justify-content: center;
+    padding: 25px 15px;
     background-color: white;
-    border-bottom: none; /* Убираем разделитель */
-    position: relative; /* Для позиционирования кнопки */
+    border-bottom: none;
+    position: relative;
 } 
-
-/* Кнопка назад */
 .back-btn {
-    position: absolute; /* Для абсолютного позиционирования кнопки */
-    left: 0; /* Сдвигаем кнопку влево */
+    position: absolute;
+    left: 0;
     font-size: 25px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0; /* Убираем padding, чтобы кнопка не была слишком большой */
+    padding: 0;
 }
-
-/* Заголовок */
 .header h1 {
-    text-align: center; /* Центрируем текст */
+    text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    flex-grow: 1; /* Позволяет заголовку занимать всю доступную ширину */
-    margin: 0; /* Убираем отступы */
+    flex-grow: 1;
+    margin: 0;
 }
-
-/* Tabs */
 .tabs {
     display: flex;
     justify-content: center;
@@ -210,161 +189,149 @@ body, html {
 
 .detail-item {
     outline: none;
-            margin-bottom: 15px;
-        }
-        .det-info {
-            outline: none;
-            font-weight: 450;
-            margin-bottom: 5px;
-            color: #999;
-        }
-        input[type="text"] {
-            width: 100%;
-            outline: none;
-            padding: 8px;
-            margin-top: 5px;
-            font-weight: 500;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        input[type="text"].readonly {
-            border: none;
-            background: none;
-            padding: 0;
-            font-size: 16px;
-            color: black;
-            pointer-events: none; /* Полностью отключает возможность взаимодействия */
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-    
+    margin-bottom: 15px;
+}
 
-/* Модальное окно */
-/* Основной стиль для модального окна */
+.det-info {
+    outline: none;
+    font-weight: 450;
+    margin-bottom: 5px;
+    color: #999;
+}
+
+input[type="text"] {
+    width: 100%;
+    outline: none;
+    padding: 8px;
+    margin-top: 5px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"].readonly {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+}
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+ 
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 .modal {
-    position: fixed; /* Закрепляем окно на экране */
-    bottom: 0; /* Окно будет прикреплено к нижнему краю экрана */
-    left: 50%; /* Центрируем по горизонтали */
-    transform: translateX(-50%) translateY(100%); /* Начальное положение снизу */
-    width: 90%; /* Уменьшаем ширину до 90% экрана */
-    max-width: 360px; /* Максимальная ширина */
-    height: 320px; /* Фиксированная высота */
-    background: white; /* Цвет фона */
-    border-radius: 10px; /* Скругляем углы */
-    padding: 20px; /* Внутренние отступы */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Тень */
-    z-index: 1000; /* Поверх всех элементов */
-    visibility: hidden; /* Окно скрыто по умолчанию */
-    opacity: 0; /* Окно скрыто по умолчанию */
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s 0.4s; /* Плавное появление */
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 90%;
+    max-width: 360px;
+    height: 320px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s 0.4s;
 }
 
-/* Видимое состояние модального окна */
 .modal.visible {
-    transform: translateX(-50%) translateY(0); /* Окно поднимается наверх */
-    opacity: 1; /* Окно становится видимым */
-    visibility: visible; /* Окно становится видимым */
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s; /* Плавность перехода */
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s;
 }
 
-/* Заголовок модального окна */
 .modal-header {
     display: flex;
-    justify-content: space-between; /* Разделяем заголовок и кнопку */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .modal-header h2 {
-    font-size: 18px; /* Размер текста */
+    font-size: 18px;
     font-weight: bold;
-    margin: 0; /* Убираем отступы */
+    margin: 0;
 }
 
-/* Кнопка закрытия модального окна */
 .close-modal-btn {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* Контент модального окна */
 .modal-content {
     text-align: center;
-    padding: 10px 0; /* Отступы для внутреннего контента */
+    padding: 10px 0;
 }
 
 .qr-code {
-    width: 150px; /* Размер QR-кода */
+    width: 150px;
     height: 150px;
-    margin: 5px auto; /* Центрируем по горизонтали, уменьшаем отступы */
+    margin: 5px auto;
     object-fit: contain;
     display: block;
 }
 
-/* Обертка для текста "Или скажите код" и самого кода */
 .random-code-wrapper {
-    position: absolute; /* Абсолютное позиционирование */
-    bottom: 30px; /* Расположение у нижнего края окна */
-    left: 50%; /* Центрируем по горизонтали */
-    transform: translateX(-50%); /* Центрируем по горизонтали */
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
-/* Текст "Или скажите код" */
 .random-code-wrapper .inst {
-    font-size: 14px; /* Размер шрифта */
+    font-size: 14px;
     color: black;
-    margin-bottom: 5px; /* Уменьшаем отступ между текстом и кодом */
+    margin-bottom: 5px;
 }
 
-/* Шестизначный код */
 .random-code-wrapper .random-code {
-    font-size: 25px; /* Размер шрифта */
-    font-weight: bold; /* Жирный шрифт */
-    color: black; /* Цвет текста */
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
     margin-top: 5px;
 }
-/* Страница фиксирована, чтобы не растягивалась */
-
-/* Фиксируем контейнер с изображением на экране */
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed; /* Фиксируем на экране */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
-    overflow: hidden; /* Чтобы не выходило за пределы */
+    overflow: hidden;
 }
-
-/* Стили для изображения */
 #uploaded-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     cursor: zoom-in;
     transition: transform 0.2s ease;
-    transform-origin: center center; /* Центрируем зум */
-    user-select: none; /* Предотвращаем выделение изображения */
+    transform-origin: center center;
+    user-select: none;
 }
-/* Блок с фиксированнойнавигацией (шапка и нижние кнопки) */
+
 header, footer {
     position: fixed;
     width: 100%;
@@ -392,7 +359,7 @@ header {
 
 .footer {
     position: relative;
-    bottom: 50px;
+    bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
