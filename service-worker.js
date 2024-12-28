@@ -15,7 +15,7 @@ const urlsToCache = [
     'kaspi/scripts/idcard.js',
     'kaspi/app.js',
     'kaspi/manifest.json',
-    'kaspi/offline.html' // Оффлайн-страница
+    'kaspi/idcard.html' // Оффлайн-страница
 ];
 
 self.addEventListener('install', event => {
