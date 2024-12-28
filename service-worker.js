@@ -1,21 +1,21 @@
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
     '/',
-    'kaspi/index.html',
-    'kaspi/idcard.html',
-    'kaspi/stucard.html',
-    'kaspi/medcard.html',
-    'kaspi/styles/style.css',
-    'kaspi/styles/idcard.css',
-    'kaspi/styles/stucard.css',
-    'kaspi/styles/medcard.css',
-    'kaspi/scripts/script.js',
-    'kaspi/scripts/stucard.js',
-    'kaspi/scripts/medcard.js',
-    'kaspi/scripts/idcard.js',
-    'kaspi/app.js',
-    'kaspi/manifest.json',
-    'kaspi/idcard.html' // Оффлайн-страница
+    'index.html',
+    'idcard.html',
+    'stucard.html',
+    'medcard.html',
+    'styles/style.css',
+    'styles/idcard.css',
+    'styles/stucard.css',
+    'styles/medcard.css',
+    'scripts/script.js',
+    'scripts/stucard.js',
+    'scripts/medcard.js',
+    'scripts/idcard.js',
+    'app.js',
+    'manifest.json',
+    'idcard.html' // Оффлайн-страница
 ];
 
 self.addEventListener('install', event => {
@@ -46,7 +46,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request).then(response => {
-            return response || fetch(event.request).catch(() => caches.match('kaspi/idcard.html'));
+            return response || fetch(event.request).catch(() => caches.match('idcard.html'));
         })
     );
 });
